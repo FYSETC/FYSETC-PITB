@@ -39,9 +39,9 @@ Thanks for the great effort of the PCB designers [DFH](https://github.com/deepfr
    <tr><td>RX</td><td>GPIO9</td><td></td></tr>
    <tr><td rowspan="2">EEPROM I2C Pin-Out</td><td>SCL</td><td>GPIO25</td><td></td></tr>
    <tr><td>SDA</td><td>GPIO24</td><td></td></tr>
-   <tr><td rowspan="3">SWD Debug</td><td>SWDIO</td><td>SWDIO</td><td>25</td><td>only used for debugging now and can be used for other purposes.</td></tr>
-   <tr><td>SWCLK</td><td>SWCLK</td><td>24</td><td>only used for debugging now and can be used for other purposes.</td></tr>
-   </td><td>RESET</td><td>#RUN</td><td>26</td><td></td></tr>
+   <tr><td rowspan="3">SWD Debug</td><td>SWDIO</td><td>SWDIO</td><td>only used for debugging now and can be used for other purposes.</td></tr>
+   <tr><td>SWCLK</td><td>SWCLK</td><td>only used for debugging now and can be used for other purposes.</td></tr>
+   </td><td>RESET</td><td>#RUN</td><td></td></tr>
 </table>
 ## Firmware
 
