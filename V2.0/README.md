@@ -51,9 +51,9 @@ canbus_uuid: XXXXXXXXXXXX<br>
 <br>
 [stepper_x]<br>
 step_pin:PITB:gpio6<br>
-dir_pin:PITB:!gpio5<br>
-enable_pin:PITB:!gpio20<br>
-#endstop_pin:PITB:^!gpio16<br>
+dir_pin:!PITB:gpio5<br>
+enable_pin:!PITB:gpio20<br>
+#endstop_pin:^!PITB:gpio16<br>
 endstop_pin: tmc2130_stepper_x:virtual_endstop<br>
 homing_retract_dist: 20<br>
 rotation_distance: 40<br>
@@ -67,7 +67,7 @@ cs_pin:PITB:gpio1<br>
 spi_software_sclk_pin:PITB:gpio2<br>
 spi_software_mosi_pin:PITB:gpio3<br>
 spi_software_miso_pin:PITB:gpio4<br>
-diag1_pin:PITB:!gpio7<br>
+diag1_pin:!PITB:gpio7<br>
 driver_SGT: -64  # -64 is most sensitive value, 63 is least sensitive<br>
 #stealthchop_threshold: 999999<br>
 interpolate: False<br>
@@ -75,8 +75,8 @@ interpolate: False<br>
 [stepper_y]<br>
 step_pin:PITB:gpio13<br>
 dir_pin:PITB:gpio23<br>
-enable_pin:PITB:!gpio22<br>
-#endstop_pin:PITB:^!gpio17<br>
+enable_pin:!PITB:gpio22<br>
+#endstop_pin:^!PITB:gpio17<br>
 endstop_pin: tmc2130_stepper_y:virtual_endstop<br>
 homing_retract_dist: 20<br>
 rotation_distance: 40<br>
@@ -90,7 +90,7 @@ cs_pin:PITB:gpio21<br>
 spi_software_sclk_pin:PITB:gpio2<br>
 spi_software_mosi_pin:PITB:gpio3<br>
 spi_software_miso_pin:PITB:gpio4<br>
-diag1_pin:PITB:!gpio14<br>
+diag1_pin:!PITB:gpio14<br>
 driver_SGT: -64  # -64 is most sensitive value, 63 is least sensitive<br>
 #stealthchop_threshold: 999999<br>
 interpolate: False<br>
