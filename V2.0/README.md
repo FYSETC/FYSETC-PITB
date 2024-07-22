@@ -45,6 +45,8 @@ Thanks for the great effort of the PCB designers [DFH](https://github.com/deepfr
 </table>
 
 <h1>Firmware</h1>
+At this time klipper onlysupports CAN not CAN FD, The jumper must be fitted between SEL and GND, This is near the reset button to the left of T2.
+<img src="assets/PITB_V2_klipper_jumper.png">
 <h2>Canboot/Katapult:</h2>
 cd ~/CanBoot/<br>
 make menuconfig<br>
