@@ -44,7 +44,7 @@ Thanks for the great effort of the PCB designers [DFH](https://github.com/deepfr
    </td><td>RESET</td><td>#RUN</td><td></td></tr>
 </table>
 
-<h1>## Firmware</h1>
+<h1>Firmware</h1>
 <h2>Canboot:</h2>
 cd ~/CanBoot/<br>
 make menuconfig<br>
@@ -79,7 +79,7 @@ make clean<br>
 make -j 4<br>
 python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u XXXXXXXXXXX<br>
 <br>
-<h2>Klipper Conmfig:</h2>
+<h2>Klipper Config:</h2>
 [mcu PITB]<br>
 canbus_uuid: XXXXXXXXXXXX<br>
 <br>
