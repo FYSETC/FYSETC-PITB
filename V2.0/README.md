@@ -45,15 +45,10 @@ Thanks for the great effort of the PCB designers [DFH](https://github.com/deepfr
 </table>
 
 <h1>Firmware</h1>
-<h2>Canboot:</h2>
+<h2>Canboot/Katapult:</h2>
 cd ~/CanBoot/<br>
 make menuconfig<br>
-  MCU Raspberry Pi RP2040<br>
-  Build CanBoot deployment 16Kib Bootloader<br>
-  Com interface CAN bus<br>
-  CAN RX GPIO 9<br>
-  CAN Tx GPIO 8<br>
-  CAN bus speed 1000000<br>
+<img src="assets/Katapult_firmware_PITBv2.png">
 make clean<br>
 make -j 4<br>
 reboot into bootloader mode<br>
@@ -67,12 +62,7 @@ cd ~/klipper<br>
 #backup existying config for your current MCU<br>
 cp -f ~/klipper/.config ~/printer_data/config/firmware/MCU.config<br>
 make menuconfig<br>
-  MCU: Raspberry Pi RP2040<br>
-  bootloader offset: 16KiB Bootloader<br>
-  Com interface CAN bus<br>
-  CAN RX GPIO 9<br>
-  CAN Tx GPIO 8<br>
-  CAN bus speed 1000000<br>
+<img src="assets/Klipper_firmware_PITBv2.png">
 #backup config for PITB klipper firmware<br>
 cp -f ~/klipper/.config ~/printer_data/config/firmware/pitb.config<br>
 make clean<br>
