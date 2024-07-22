@@ -81,5 +81,5 @@ python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u X
 <br>
 
 <h1>Klipper Config:</h1>
-<a href="https://github.com/eddwatts/FYSETC-PITB/blob/main/V2.0/PITB.cfg">PITB.cfg</a><br>
-<a href="https://github.com/eddwatts/FYSETC-PITB/blob/main/V2.0/sensorless_homing.cfg">sensorless_homing.cfg</a><br>
+<a href="PITB.cfg">PITB.cfg</a><br>
+<a href="sensorless_homing.cfg">sensorless_homing.cfg</a><br>
