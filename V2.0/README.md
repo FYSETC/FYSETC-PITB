@@ -43,9 +43,43 @@ Thanks for the great effort of the PCB designers [DFH](https://github.com/deepfr
    <tr><td>SWCLK</td><td>SWCLK</td><td>only used for debugging now and can be used for other purposes.</td></tr>
    </td><td>RESET</td><td>#RUN</td><td></td></tr>
 </table>
-## Firmware
 
-Klipper:<br>
+<h1>## Firmware</h1>
+<h2>Canboot:</h2>
+cd ~/CanBoot/<br>
+make menuconfig<br>
+  MCU Raspberry Pi RP2040<br>
+  Build CanBoot deployment 16Kib Bootloader<br>
+  Com interface CAN bus<br>
+  CAN RX GPIO 9<br>
+  CAN Tx GPIO 8<br>
+  CAN bus speed 1000000<br>
+make clean<br>
+make -j 4<br>
+reboot into bootloader mode<br>
+sudo make flash FLASH_DEVICE=2e8a:0003<br>
+~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0<br>
+This should show a canboot device for you PITB the UUID is needed for klipper config and to flash the firmware<br>
+<br>
+<h2>Klipper Firmware</h2>
+mkdir ~/printer_data/config/firmware<br>
+cd ~/klipper<br>
+#backup existying config for your current MCU<br>
+cp -f ~/klipper/.config ~/printer_data/config/firmware/MCU.config<br>
+make menuconfig<br>
+  MCU: Raspberry Pi RP2040<br>
+  bootloader offset: 16KiB Bootloader<br>
+  Com interface CAN bus<br>
+  CAN RX GPIO 9<br>
+  CAN Tx GPIO 8<br>
+  CAN bus speed 1000000<br>
+#backup config for PITB klipper firmware<br>
+cp -f ~/klipper/.config ~/printer_data/config/firmware/pitb.config<br>
+make clean<br>
+make -j 4<br>
+python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u XXXXXXXXXXX<br>
+<br>
+<h2>Klipper Conmfig:</h2>
 [mcu PITB]<br>
 canbus_uuid: XXXXXXXXXXXX<br>
 <br>
