@@ -37,7 +37,7 @@ Thanks for the great effort of the PCB designers [DFH](https://github.com/deepfr
    <td>T2（THERM2）</td><td>GPIO28</td><td>A 4.7kOhm 0.1% temperature sensor pull up resistor is used,PT1000 can be connected directly. For PT100, an amplifier board must be used.</td></tr>
    <tr><td rowspan="2">CAN</td><td>TX</td><td>GPIO8</td><td></td></tr>
    <tr><td>RX</td><td>GPIO9</td><td></td></tr>
-   <tr><td rowspan="3">SSD1306 Display/EEPROM I2C Pin-Out</td><td>SCL</td><td>GPIO25</td><td></td></tr>
+   <tr><td rowspan="3">SSD1306 Display/BME280/EEPROM I2C Pin-Out</td><td>SCL</td><td>GPIO25</td><td></td></tr>
    <tr><td>SDA</td><td>GPIO24</td><td></td></tr>
    <tr><td>i2C Bus</td><td>i2c0g</td><td></td></tr>
    <tr><td rowspan="3">SWD Debug</td><td>SWDIO</td><td>SWDIO</td><td>only used for debugging now and can be used for other purposes.</td></tr>
