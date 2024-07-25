@@ -61,9 +61,11 @@ I2C connector for smart peripherals (displays, sensors, and more)<br>
    </td><td>RESET</td><td>#RUN</td><td></td></tr>
 </table>
 
-#### 2.2 Firmware
 At this time klipper only supports CAN not CAN FD, The jumper must be fitted between SEL and GND.
 ![](assets/PITB_V2_klipper_jumper.png)
+
+
+#### 2.2 Firmware
 ##### 2.2.1 Canboot/Katapult
 cd ~/CanBoot/<br>
 make menuconfig<br>
