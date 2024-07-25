@@ -6,6 +6,22 @@
 
 Thanks for the great effort of the PCB designers [DFH](https://github.com/deepfriedheroin), [Armchair-Engineering](https://github.com/Armchair-Engineering), [kageurufu](Https://GitHub.com/kageurufu) and the other members from community to make this come true.
 
+## Features
+
+1. Dual 6.0A MAX onboard TMC5160 Drivers with heatsink
+2. RP2040 133Mhz 32 Bit microcontroller
+3. CANBUS CANFD based on MCP2518
+4. 12V5V/3.3V DC-DC Convertor
+5. Klipper & RRF Firmware Support
+
+RP2040 Microprocessor<br>
+TMC5160 Drivers, using FYSETC's BIG5160 modules for up to 60V 6A per stepper<br>
+Two fan control connectors, either 5V or 24V selectable<br>
+3 Thermistor connector, for reading temperatures<br>
+Two endstop connectors, 3.3V logic level<br>
+Neopixel RGB connectors<br>
+I2C connector for smart peripherals (displays, sensors, and more)<br>
+
 ### 2. Hardware guide
 
 #### 2.1 pinout
@@ -45,13 +61,13 @@ Thanks for the great effort of the PCB designers [DFH](https://github.com/deepfr
    </td><td>RESET</td><td>#RUN</td><td></td></tr>
 </table>
 
-<h1>Firmware</h1>
+#### 2.2 Firmware
 At this time klipper only supports CAN not CAN FD, The jumper must be fitted between SEL and GND.
-<img src="assets/PITB_V2_klipper_jumper.png">
-<h2>Canboot/Katapult:</h2>
+![](assets/PITB_V2_klipper_jumper.png)
+##### 2.2.1 Canboot/Katapult
 cd ~/CanBoot/<br>
 make menuconfig<br>
-<img src="assets/Katapult_firmware_PITBv2.png">
+![](assets/Katapult_firmware_PITBv2.png)
 make clean<br>
 make -j 4<br>
 reboot into bootloader mode<br>
@@ -59,13 +75,13 @@ sudo make flash FLASH_DEVICE=2e8a:0003<br>
 ~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0<br>
 This should show a canboot device for you PITB the UUID is needed for klipper config and to flash the firmware<br>
 <br>
-<h2>Klipper Firmware</h2>
+##### 2.2.2 Klipper Firmware
 mkdir ~/printer_data/config/firmware<br>
 cd ~/klipper<br>
 #backup existying config for your current MCU<br>
 cp -f ~/klipper/.config ~/printer_data/config/firmware/MCU.config<br>
 make menuconfig<br>
-<img src="assets/Klipper_firmware_PITBv2.png">
+![](assets/Klipper_firmware_PITBv2.png)
 #backup config for PITB klipper firmware<br>
 cp -f ~/klipper/.config ~/printer_data/config/firmware/pitb.config<br>
 make clean<br>
