@@ -2,7 +2,7 @@
 
 ![](PITB_V2_TOP.png)
 
-### 1. Product introduction
+## 1. Product introduction
 
 Thanks for the great effort of the PCB designers [DFH](https://github.com/deepfriedheroin), [Armchair-Engineering](https://github.com/Armchair-Engineering), [kageurufu](Https://GitHub.com/kageurufu) and the other members from community to make this come true.
 
@@ -22,9 +22,9 @@ Two endstop connectors, 3.3V logic level<br>
 Neopixel RGB connectors<br>
 I2C connector for smart peripherals (displays, sensors, and more)<br>
 
-### 2. Hardware guide
+## 2. Hardware guide
 
-#### 2.1 pinout
+### 2.1 pinout
 
 ![](assets/PITB_V2_pinout_00.jpg)
 
@@ -61,13 +61,13 @@ I2C connector for smart peripherals (displays, sensors, and more)<br>
    </td><td>RESET</td><td>#RUN</td><td></td></tr>
 </table>
 
-#### 2.2 Klipper and Canbus
+### 2.2 Klipper and Canbus
 At this time klipper only supports CAN not CAN FD, The jumper must be fitted between SEL and GND.
 ![](assets/PITB_V2_klipper_jumper.png)
 
 
-#### 3 Firmware
-##### 3.1 Canboot/Katapult
+## 3 Firmware
+### 3.1 Canboot/Katapult
 cd ~/CanBoot/<br>
 make menuconfig<br>
 ![](assets/Katapult_firmware_PITBv2.png)
@@ -78,7 +78,7 @@ sudo make flash FLASH_DEVICE=2e8a:0003<br>
 ~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0<br>
 This should show a canboot device for you PITB the UUID is needed for klipper config and to flash the firmware<br>
 <br>
-##### 3.2 Klipper Firmware
+### 3.2 Klipper Firmware
 mkdir ~/printer_data/config/firmware<br>
 cd ~/klipper<br>
 #backup existying config for your current MCU<br>
@@ -92,6 +92,6 @@ make -j 4<br>
 python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u XXXXXXXXXXX<br>
 <br>
 
-#### 4 Klipper Config
+## 4 Klipper Config
 <a href="PITB.cfg">PITB.cfg</a><br>
 <a href="sensorless_homing.cfg">sensorless_homing.cfg</a><br>
