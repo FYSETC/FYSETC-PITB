@@ -45,9 +45,9 @@ I2C connector for smart peripherals (displays, sensors, and more)<br>
    <tr><td>SCK</td><td>GPIO2</td><td></td></tr>
    <tr><td rowspan="2">End-stops</td><td>X-STOP</td><td>GPIO16</td><td></td></tr>
    <tr><td>Y-STOP</td><td>GPIO17</td><td></td></tr>
-   <tr><td rowspan="3">FAN/RGB</td><td>FAN0</td><td>GPIO0</td><td></td></tr>
-   </td><td>FAN1</td><td>GPIO18</td><td></td></tr>
-   </td><td>RGB</td><td>GPIO19</td><td></td></tr>
+   <tr><td rowspan="2">FANs</td><td>FAN0</td><td>GPIO0</td><td></td></tr>
+   <tr><td>FAN1</td><td>GPIO18</td><td></td></tr>
+   <tr><td>RGB</td><td>RGB</td><td>GPIO19</td><td></td></tr>
    <tr><td rowspan="3">Temperature</td><td>T0（THERM0）</td><td>GPIO26</td><td>A 4.7kOhm 0.1% temperature sensor pull up resistor is used,PT1000 can be connected directly. For PT100, an amplifier board must be used.</td></tr>
    <td>T1（THERM1）</td><td>GPIO27</td><td>A 4.7kOhm 0.1% temperature sensor pull up resistor is used,PT1000 can be connected directly. For PT100, an amplifier board must be used.</td></tr>
    <td>T2（THERM2）</td><td>GPIO28</td><td>A 4.7kOhm 0.1% temperature sensor pull up resistor is used,PT1000 can be connected directly. For PT100, an amplifier board must be used.</td></tr>
