@@ -10,7 +10,7 @@ Thanks for the great effort of the PCB designers [DFH](https://github.com/deepfr
 
 #### 2.1 pinout
 
-![](assets/PITB_V2_pinout_00.jpg)
+![](assets/PITB_V2_Pinout_00.jpg)
 
 <table>
    <tr><td>Features</td><td>PITB Pin</td><td>RP2040 Pin</td><td>Pin No.</td><td>Comment</td></tr>
