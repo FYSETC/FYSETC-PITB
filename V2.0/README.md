@@ -89,7 +89,7 @@ make menuconfig KCONFIG_CONFIG=config.pitb<br>
 #backup config for PITB klipper firmware<br>
 cp -f ~/klipper/.config ~/printer_data/config/firmware/pitb.config<br>
 cp -f ~/klipper/config.pitb ~/printer_data/config/firmware/config.pitb<br>
-make  KCONFIG_CONFIG=config.pitb -j4
+make  KCONFIG_CONFIG=config.pitb -j4<br>
 python3 ~/katapult/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u XXXXXXXXXXX<br>
 <br>
 
