@@ -67,29 +67,30 @@ At this time klipper only supports CAN not CAN FD, The jumper must be fitted bet
 
 
 ## 3 Firmware
-### 3.1 Canboot/Katapult
-cd ~/CanBoot/<br>
-make menuconfig<br>
+### 3.1 Katapult
+cd ~/katapult/<br>
+make clean KCONFIG_CONFIG=config.pitb<br>
+make menuconfig KCONFIG_CONFIG=config.pitb<br>
 ![](assets/Katapult_firmware_PITBv2.png)
-make clean<br>
-make -j 4<br>
+make KCONFIG_CONFIG=config.pitb -j4<br>
 reboot into bootloader mode<br>
 sudo make flash FLASH_DEVICE=2e8a:0003<br>
 ~/klippy-env/bin/python ~/klipper/scripts/canbus_query.py can0<br>
-This should show a canboot device for you PITB the UUID is needed for klipper config and to flash the firmware<br>
+This should show a Katapult device for you PITB the UUID is needed for klipper config and to flash the firmware<br>
 <br>
 ### 3.2 Klipper Firmware
 mkdir ~/printer_data/config/firmware<br>
 cd ~/klipper<br>
 #backup existying config for your current MCU<br>
 cp -f ~/klipper/.config ~/printer_data/config/firmware/MCU.config<br>
-make menuconfig<br>
+make clean KCONFIG_CONFIG=config.pitb<br>
+make menuconfig KCONFIG_CONFIG=config.pitb<br>
 ![](assets/Klipper_firmware_PITBv2.png)
 #backup config for PITB klipper firmware<br>
 cp -f ~/klipper/.config ~/printer_data/config/firmware/pitb.config<br>
-make clean<br>
-make -j 4<br>
-python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u XXXXXXXXXXX<br>
+cp -f ~/klipper/config.pitb ~/printer_data/config/firmware/config.pitb<br>
+make  KCONFIG_CONFIG=config.pitb -j4
+python3 ~/katapult/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u XXXXXXXXXXX<br>
 <br>
 
 ## 4 Klipper Config
