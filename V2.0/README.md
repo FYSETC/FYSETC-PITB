@@ -40,7 +40,8 @@ I2C connector for smart peripherals (displays, sensors, and more)<br>
    <tr><td>Y-EN</td><td>GPIO22</td><td></td></tr>
    <tr><td>Y-CS/PDN</td><td>GPIO21</td><td></td></tr>
    <tr><td>Y-DIAG</td><td>GPIO14</td><td></td></tr>
-   <tr><td rowspan="3">TMC Driver SPI </td><td>MOSI</td><td>GPIO3</td><td></td></tr>
+   <tr><td rowspan="4">TMC Driver SPI </td><td>spi_bus: spi0_gpio4_gpio3_gpio2</td><td>Use this in the config file for hardware spi bus</td></tr>
+   <tr><td>MOSI</td><td>GPIO3</td><td></td></tr>
    <tr><td>MISO</td><td>GPIO4</td><td></td></tr>
    <tr><td>SCK</td><td>GPIO2</td><td></td></tr>
    <tr><td rowspan="2">End-stops</td><td>X-STOP</td><td>GPIO16</td><td></td></tr>
